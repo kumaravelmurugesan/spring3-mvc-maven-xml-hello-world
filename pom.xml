@@ -53,6 +53,17 @@
 					</webApp>
 				</configuration>
 			</plugin>
+			
+			<!-- For Maven Tomcat Plugin -->
+		  <plugin>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+			<configuration>
+				<port>8080</port>
+				<path>/spring3</path>
+			</configuration>
+		  </plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -65,6 +76,33 @@
 					<wtpContextName>spring3</wtpContextName>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+					</archive>
+					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+							<excludes>
+								<exclude>**/*.ttf</exclude>
+								<exclude>**/*.eot</exclude>
+								<exclude>**/*.woff</exclude>
+								<exclude>**/*.woff2</exclude>
+							</excludes>
+						</resource>
+				
+					</webResources>
+
+				</configuration>
+			</plugin>			
 			
 		</plugins>
 	</build>
