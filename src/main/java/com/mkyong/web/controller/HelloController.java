@@ -22,11 +22,16 @@ public class HelloController {
 	public ModelAndView hello(@PathVariable("name") String name) {
 
 		ModelAndView model = new ModelAndView();
+		method1();
 		model.setViewName("hello");
 		model.addObject("msg", name);
 
 		return model;
 
+	}
+	
+	private void method1() {
+		System.out.println("method1");
 	}
 
 }
