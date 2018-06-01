@@ -45,5 +45,16 @@ public class HelloController {
 
 	}
 	
+	@RequestMapping(value = "/method1/{name:.+}", method = RequestMethod.GET)
+	public ModelAndView method2(@PathVariable("name") String name) {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("hello");
+		model.addObject("msg", name);
+
+		return model;
+
+	}	
+	
 
 }
