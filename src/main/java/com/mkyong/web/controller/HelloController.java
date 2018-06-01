@@ -50,7 +50,7 @@ public class HelloController {
 		System.out.println("method1");
 	}
 		
-	@RequestMapping(value = "/method1/{name:.+}", method = RequestMethod.GET)
+	@RequestMapping(value = "/method2/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView method2(@PathVariable("name") String name) {
 
 		ModelAndView model = new ModelAndView();
