@@ -24,6 +24,7 @@ public class HelloController {
 		ModelAndView model = new ModelAndView();
 		method1();
 		model.setViewName("hello");
+		method2();
 		model.addObject("msg", name);
 
 		return model;
@@ -45,5 +46,8 @@ public class HelloController {
 
 	}
 	
+	private void method2() {
+		System.out.println("method1");
+	}	
 
 }
